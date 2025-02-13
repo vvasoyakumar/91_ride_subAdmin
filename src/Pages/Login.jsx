@@ -36,7 +36,7 @@ const Login = () => {
       setisSubAdminAuthenticated(true);
       setsubAdminData(data?.data);
 
-      console.log(data?.data);
+      // console.log(data?.data);
 
       navigate("/");
     } catch (error) {

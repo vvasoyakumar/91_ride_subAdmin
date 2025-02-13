@@ -35,3 +35,6 @@ export const sendScheduledRequest = async (data, params, headers) =>
 
 export const getAllPreBookings = async (params, headers) =>
   http.get("/api/v1/subAdmin/getPreBookingHistory", { params, headers });
+
+export const dashboard = async (params, headers) =>
+  http.get("/api/v1/subAdmin/dashboard", { params, headers });

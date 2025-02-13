@@ -1,4 +1,17 @@
+import { useState } from "react";
+import { dashboard } from "../api";
+
 const Home = () => {
+  const [dashboardData, setDashboardData] = useState();
+
+  const getDashboardData = async () => {
+    const { data } = await dashboard();
+    if (data?.status !== "success") throw new Error(data?.message);
+
+    console.log(data.data);
+    setDashboardData(data.data);
+  };
+
   return (
     <div className="w-full h-[calc(100vh-96px)] p-8 overflow-auto bg-gray-50">
       <div className="mt-8">
@@ -23,19 +36,25 @@ const Home = () => {
           {/* Ride Pending Card */}
           <div className="flex flex-col bg-[#FEE2E2] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             <p className="text-gray-700 font-medium">Ride Pending</p>
-            <p className="mt-4 text-2xl text-gray-800 font-semibold">3</p>
+            <p className="mt-4 text-2xl text-gray-800 font-semibold">
+              {dashboardData?.pendingBookings || 0}
+            </p>
           </div>
 
           {/* Ride Completed Card */}
           <div className="flex flex-col bg-[#BFDBFE] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             <p className="text-gray-700 font-medium">Ride Completed</p>
-            <p className="mt-4 text-2xl text-gray-800 font-semibold">6</p>
+            <p className="mt-4 text-2xl text-gray-800 font-semibold">
+              {dashboardData?.completedBookings || 0}
+            </p>
           </div>
 
           {/* Ride Cancelled Card */}
           <div className="flex flex-col bg-[#D1FAE5] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             <p className="text-gray-700 font-medium">Ride Cancelled</p>
-            <p className="mt-4 text-2xl text-gray-800 font-semibold">1</p>
+            <p className="mt-4 text-2xl text-gray-800 font-semibold">
+              {dashboardData?.canceledBookings || 0}
+            </p>
           </div>
         </div>
       </div>

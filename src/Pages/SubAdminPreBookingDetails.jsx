@@ -121,7 +121,8 @@ const SubAdminPreBookingDetails = () => {
                   <td className="px-4 py-2 capitalize font-medium">
                     {new Date(
                       SubAdminPrebookingData?.createdAt
-                    ).toLocaleDateString()}
+                    ).toLocaleString()}
+                    {/* ).toLocaleDateString()} */}
                   </td>
                 </tr>
                 <tr className="border-t border-gray-300">

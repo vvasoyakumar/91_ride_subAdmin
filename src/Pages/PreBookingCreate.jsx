@@ -471,13 +471,15 @@ const PreBookingCreate = () => {
         <div className="space-y-8">
           {/* Name Field */}
           <div className="w-full">
-            <label className="block text-sm font-medium mb-2">Full Name</label>
+            <label className="block text-lg font-semibold mb-3 text-gray-700">
+              Full Name
+            </label>
             <input
               type="text"
               name="name"
               value={UserFormData.name}
               onChange={handleUserInputChange}
-              className="w-full border-2 border-gray-300 text-gray-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+              className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
               placeholder="Enter your full name"
             />
           </div>
@@ -492,7 +494,7 @@ const PreBookingCreate = () => {
               name="number"
               value={UserFormData.number}
               onChange={handleUserInputChange}
-              className="w-full border-2 border-gray-300 text-gray-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+              className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
               placeholder="Enter your mobile number"
             />
           </div>
@@ -507,7 +509,7 @@ const PreBookingCreate = () => {
               name="email"
               value={UserFormData.email}
               onChange={handleUserInputChange}
-              className="w-full border-2 border-gray-300 text-gray-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+              className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
               placeholder="Enter your email address"
             />
           </div>
@@ -519,7 +521,7 @@ const PreBookingCreate = () => {
               name="gender"
               value={UserFormData.gender}
               onChange={handleUserInputChange}
-              className="w-full border-2 border-gray-300 text-gray-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+              className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
             >
               <option className="text-gray-800" value="male">
                 Male
@@ -570,7 +572,7 @@ const PreBookingCreate = () => {
                 name="pickupLocation"
                 value={formData.pickupLocation}
                 onChange={handleInputPickChange}
-                className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+                className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400 "
                 placeholder="Enter pickup location"
               />
             </Autocomplete>
@@ -589,7 +591,7 @@ const PreBookingCreate = () => {
                 name="destinationLocation"
                 value={formData.destinationLocation}
                 onChange={handleInputDestChange}
-                className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+                className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
                 placeholder="Enter destination location"
               />
             </Autocomplete>
@@ -607,7 +609,7 @@ const PreBookingCreate = () => {
               name="scheduledTime"
               value={formData.scheduledTime}
               onChange={handleInputChange}
-              className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-lime-300 transition-all"
+              className="w-full border-2 border-gray-400 rounded-xl p-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 shadow-md hover:border-lime-400"
               min={new Date().toISOString().slice(0, 16)}
             />
           </div>
@@ -625,24 +627,24 @@ const PreBookingCreate = () => {
       </form>
 
       <div
-        className={`space-y-4 max-w-4xl mx-auto bg-gray-50 text-gray-800 p-5 border rounded-xl shadow-xl mb-6 ${
+        className={`space-y-5 max-w-4xl mx-auto bg-white text-gray-900 p-5 border border-gray-200 rounded-xl shadow-lg mb-6 transition-all duration-300 ${
           ExistPage == "availableDrivers" ? "block" : "hidden"
         }`}
       >
         {/* Pick-up Address */}
         <div className="font-medium">
-          <span className="text-green-500 font-semibold text-lg">
+          <span className="text-green-600 font-semibold text-lg">
             Pick-up :
           </span>{" "}
-          <span className="font-medium text-md">
+          <span className="text-gray-700 text-md">
             {pickupAddress ? pickupAddress : "Your pickup location"}
           </span>
         </div>
 
         {/* Drop-off Address */}
         <div className="font-medium">
-          <span className="text-red-500 font-semibold text-lg">Drop-off :</span>{" "}
-          <span className="font-medium text-md">
+          <span className="text-red-600 font-semibold text-lg">Drop-off :</span>{" "}
+          <span className="text-gray-700 text-md">
             {formData.destinationLocation
               ? formData.destinationLocation
               : "Your destination location"}
@@ -663,10 +665,10 @@ const PreBookingCreate = () => {
         {DriversData.length > 0 ? (
           DriversData.map((data, i) => (
             <div
-              className={`flex justify-between items-center border shadow-lg rounded-lg px-6 py-4 w-full cursor-pointer transition-all duration-300 hover:shadow-xl ${
+              className={`flex justify-between items-center border shadow-md rounded-lg px-6 py-4 w-full cursor-pointer transition-all duration-300 hover:shadow-xl ${
                 SelectVehicle == data._id
                   ? "border-lime-500 bg-lime-50"
-                  : "border-gray-300"
+                  : "border-gray-300 hover:border-lime-400"
               }`}
               onClick={() => {
                 setSelectVehicle(data._id);
@@ -675,32 +677,32 @@ const PreBookingCreate = () => {
               key={i}
             >
               {/* Vehicle Image and Engine Type */}
-              <div className="">
+              <div className="flex flex-col items-center">
                 <img
                   // src={${config.apiUrl}/${data.vehicleId.document}}
                   src="/img/MgEv.png"
                   alt="img"
-                  className="w-24 h-16"
+                  className="w-28 h-20 rounded-md shadow-sm"
                 />
-                <div className="font-semibold text-center mt-2">
+                <div className="font-semibold text-center mt-3 text-sm text-gray-700">
                   {data?.vehicleId?.engineType.toUpperCase()}
                 </div>
               </div>
 
               {/* Vehicle Details: Name, Arrival Time, Distance, Seats */}
-              <div className="flex flex-col justify-center items-center font-medium w-1/3">
-                <div className="text-lg font-semibold">
+              <div className="flex flex-col justify-center items-center font-medium w-1/3 space-y-2">
+                <div className="text-lg lg:text-xl font-semibold text-gray-800">
                   {data?.vehicleId?.vehicleName}
                 </div>
-                <div className="text-sm">
+                <div className="text-sm text-gray-500">
                   The car will arrive in {data?.bufferTimeInMinutes} minutes
                 </div>
-                <div className="flex justify-center gap-4 mt-2 text-sm">
-                  <div className="flex items-center gap-1">
+                <div className="flex justify-center gap-6 mt-3 text-sm text-gray-600">
+                  <div className="flex items-center gap-2">
                     <span className="font-semibold">Distance:</span>
                     <span>{data?.distance}</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     <span className="font-semibold">Seats:</span>
                     <span>{data?.vehicleId?.numberOfSeats}</span>
                   </div>
@@ -709,8 +711,10 @@ const PreBookingCreate = () => {
 
               {/* Fare Information */}
               <div className="flex flex-col justify-center items-center font-semibold w-1/6">
-                <div className="text-lg">₹ {data?.fareDetails?.fare}</div>
-                <div className="text-xs">Fare Estimate</div>
+                <div className="text-xl lg:text-2xl text-gray-800">
+                  ₹ {data?.fareDetails?.fare}
+                </div>
+                <div className="text-xs text-gray-500">Fare Estimate</div>
               </div>
             </div>
           ))
@@ -742,7 +746,7 @@ const PreBookingCreate = () => {
           Pre Booking Created
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-5">
           <div className="font-medium text-md">
             <span className="text-green-500 font-semibold text-lg">
               Pick-up :
@@ -760,20 +764,24 @@ const PreBookingCreate = () => {
           </div>
         </div>
 
-        <div className="w-full  mx-auto mt-8">
-          <div className="space-y-4">
+        <div className="w-full mx-auto mt-8">
+          <div className="space-y-6">
             {/* Distance */}
-            <div className="flex justify-between">
-              <div className="font-semibold text-lg">Distance</div>
-              <div className="font-medium text-md">
+            <div className="flex justify-between items-center">
+              <div className="font-semibold text-lg text-gray-800">
+                Distance
+              </div>
+              <div className="font-medium text-md text-gray-600">
                 {SelectedDriverData?.distance}
               </div>
             </div>
 
             {/* Rate per km */}
-            <div className="flex justify-between">
-              <div className="font-semibold text-lg">Rate per km</div>
-              <div className="font-medium text-md">
+            <div className="flex justify-between items-center">
+              <div className="font-semibold text-lg text-gray-800">
+                Rate per km
+              </div>
+              <div className="font-medium text-md text-gray-600">
                 ₹{" "}
                 {
                   SelectedDriverData?.fareDetails?.vehicleId?.vehicleTypeId
@@ -783,26 +791,32 @@ const PreBookingCreate = () => {
             </div>
 
             {/* Max Size */}
-            <div className="flex justify-between">
-              <div className="font-semibold text-lg">Max Size</div>
-              <div className="font-medium text-md">
+            <div className="flex justify-between items-center">
+              <div className="font-semibold text-lg text-gray-800">
+                Max Size
+              </div>
+              <div className="font-medium text-md text-gray-600">
                 {SelectedDriverData?.vehicleId?.numberOfSeats} persons
               </div>
             </div>
 
             {/* Duration */}
-            <div className="flex justify-between">
-              <div className="font-semibold text-lg">Duration (minutes)</div>
-              <div className="font-medium text-md">
-                {SelectedDriverData?.fareDetails?.durationInMinutes} min
+            <div className="flex justify-between items-center">
+              <div className="font-semibold text-lg text-gray-800">
+                Duration (minutes)
+              </div>
+              <div className="font-medium text-md text-gray-600">
+                {SelectedDriverData?.fareDetails?.durationInMinutes.toFixed(2)}{" "}
+                min
               </div>
             </div>
 
-            {/* Base Fare */}
-            <div className="flex justify-between border-t-2 pt-4 border-gray-200">
-              {/* <div className="font-semibold text-lg">Base Fare</div> */}
-              <div className="font-semibold text-lg">Total Rate</div>
-              <div className="font-medium text-md">
+            {/* Total Rate */}
+            <div className="flex justify-between items-center border-t-2 pt-4 border-gray-200">
+              <div className="font-semibold text-lg text-gray-800">
+                Total Rate
+              </div>
+              <div className="font-medium text-md text-gray-600">
                 ₹ {SelectedDriverData?.fareDetails?.fare}
               </div>
             </div>

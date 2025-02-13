@@ -26,7 +26,7 @@ const PreBookingHistory = () => {
       }
 
       setData(data?.data?.bookings);
-      setTotalPages(data?.data?.totalPage);
+      setTotalPages(data?.data?.totalPages);
     } catch (error) {
       console.log(error);
     }
