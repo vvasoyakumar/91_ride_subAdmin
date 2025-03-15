@@ -81,7 +81,6 @@ function Layout({ children }) {
   return (
     <div className="h-screen overflow-hidden ">
       <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
       <div className="flex justify-normal items-start  w-full relative">
         <div
           className={`overflow-auto w-full max-w-60 hidden z-10 ${

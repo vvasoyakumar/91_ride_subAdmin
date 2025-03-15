@@ -197,6 +197,10 @@ const PreBookingHistory = () => {
     setPage((prev) => ({ ...prev, perPage: newSize }));
   };
 
+  const handlePageChange = (newPage) => {
+    setPage((prev) => ({ ...prev, page: newPage }));
+  };
+
   return (
     <div className="w-full h-[calc(100vh-96px)] p-5">
       <div className="flex my-5 justify-end">

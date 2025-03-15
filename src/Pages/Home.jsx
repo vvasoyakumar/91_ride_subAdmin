@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { dashboard } from "../api";
 
 const Home = () => {
   const [dashboardData, setDashboardData] = useState();
+  const [total, setTotal] = useState();
 
   const getDashboardData = async () => {
     const { data } = await dashboard();
@@ -10,7 +11,12 @@ const Home = () => {
 
     console.log(data.data);
     setDashboardData(data.data);
+    setTotal(data.totalBookings);
   };
+
+  useEffect(() => {
+    getDashboardData();
+  }, []);
 
   return (
     <div className="w-full h-[calc(100vh-96px)] p-8 overflow-auto bg-gray-50">
@@ -23,7 +29,7 @@ const Home = () => {
           <p className="text-lg font-medium text-gray-700">
             Total Pre-Bookings
           </p>
-          <p className="mt-4 text-2xl text-gray-800 font-semibold">10</p>
+          <p className="mt-4 text-2xl text-gray-800 font-semibold">{total}</p>
         </div>
       </div>
 

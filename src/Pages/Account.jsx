@@ -44,6 +44,7 @@ const Account = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -59,6 +60,7 @@ const Account = () => {
                 value={formData.mobileNumber}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -76,6 +78,7 @@ const Account = () => {
                 value={formData.address}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -93,6 +96,7 @@ const Account = () => {
                 value={formData.city}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -108,6 +112,7 @@ const Account = () => {
                 value={formData.state}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -125,6 +130,7 @@ const Account = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>
@@ -140,6 +146,7 @@ const Account = () => {
                 value={formData.headName}
                 onChange={handleChange}
                 required
+                readOnly
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-[14px]"
               />
             </div>

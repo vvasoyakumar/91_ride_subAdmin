@@ -7,6 +7,7 @@ import axios from "axios";
 import config from "../config/config";
 import { Autocomplete, LoadScript } from "@react-google-maps/api";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineRestartAlt } from "react-icons/md";
 
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 const LIBRARIES = ["places"];
@@ -27,6 +28,8 @@ const PreBookingCreate = () => {
           },
         }
       );
+
+      console.log(response);
 
       if (response.data.status === "OK") {
         const { lat, lng } = response.data.results[0].geometry.location;
@@ -270,8 +273,6 @@ const PreBookingCreate = () => {
     subAdminId: subAdminData._id,
   });
 
-  // choose driver
-
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -345,6 +346,8 @@ const PreBookingCreate = () => {
       return;
     }
   };
+
+  // choose driver
 
   useEffect(() => {
     // console.log(location);
@@ -456,8 +459,17 @@ const PreBookingCreate = () => {
     console.log(SelectedDriverData);
   }, []);
 
+  const handleButtonClick = () => {
+    // toast.success("Page is reload...");
+    window.location.reload();
+  };
+
   return (
     <div className="w-full h-[calc(100vh-96px)] p-5 overflow-auto">
+      <Button className="float-right" onClick={handleButtonClick}>
+        <MdOutlineRestartAlt className="text-xl lg:text-3xl font-semibold" />
+      </Button>
+
       <form
         className={`space-y-8 max-w-3xl mx-auto bg-gray-50 text-gray-800 p-5 border rounded-xl shadow-xl ${
           ExistPage == "createUser" ? "block" : "hidden"
@@ -679,8 +691,9 @@ const PreBookingCreate = () => {
               {/* Vehicle Image and Engine Type */}
               <div className="flex flex-col items-center">
                 <img
-                  // src={${config.apiUrl}/${data.vehicleId.document}}
-                  src="/img/MgEv.png"
+                  // src={`${config.apiUrl}/${data.vehicleId.document}`}
+                  src={`${config.apiUrl}/${data.vehicleId.vehicleImage}`}
+                  // src="/img/MgEv.png"
                   alt="img"
                   className="w-28 h-20 rounded-md shadow-sm"
                 />
@@ -700,7 +713,8 @@ const PreBookingCreate = () => {
                 <div className="flex justify-center gap-6 mt-3 text-sm text-gray-600">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold">Distance:</span>
-                    <span>{data?.distance}</span>
+                    {/* <span>{data?.distance}</span> */}
+                    <span>{data?.fareDetails?.rideDistance}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-semibold">Seats:</span>
@@ -719,7 +733,10 @@ const PreBookingCreate = () => {
             </div>
           ))
         ) : (
-          <div className="flex justify-center">
+          <div className="grid justify-center">
+            <div className="flex justify-center">
+              <img src="/img/loading.gif" alt="loading" className="w-20 h-20" />
+            </div>
             <div className="font-medium">No Drivers Available</div>
           </div>
         )}
