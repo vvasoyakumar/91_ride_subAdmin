@@ -13,6 +13,7 @@ import PreBookingHistory from "./Pages/PreBookingHistory.jsx";
 import PreBookingCreate from "./Pages/PreBookingCreate.jsx";
 import Account from "./Pages/Account.jsx";
 import SubAdminPreBookingDetails from "./Pages/SubAdminPreBookingDetails.jsx";
+import CreateBooking from "./Pages/CreateBooking.jsx";
 
 function App() {
   return <AppRoutes />;
@@ -41,10 +42,25 @@ function AppRoutes() {
           <ProtectedRoute isSubAdminAuthenticated={isSubAdminAuthenticated}>
             <Layout>
               <Routes>
+                {/* Dashboard */}
                 <Route index path="/" element={<Home />} />
 
+                {/* Create Pre Booking */}
                 <Route index path="/create" element={<PreBookingCreate />} />
 
+                {/* Create Pre Booking */}
+                <Route
+                  index
+                  path="/createBooking"
+                  element={<CreateBooking />}
+                />
+
+                {/* <Route path="/createBooking">
+                  <Route index element={<CreateBooking />} />
+                  <Route path="details" element={<BookingDetails />} />
+                </Route> */}
+
+                {/* history */}
                 <Route path="/history">
                   <Route index element={<PreBookingHistory />} />
                   <Route

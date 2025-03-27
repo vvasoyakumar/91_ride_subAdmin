@@ -38,3 +38,21 @@ export const getAllPreBookings = async (params, headers) =>
 
 export const dashboard = async (params, headers) =>
   http.get("/api/v1/subAdmin/dashboard", { params, headers });
+
+export const getScheduleRequestForAllUsers = async (params, headers) =>
+  http.get("/api/v1/subAdmin/request/getScheduleRequestForAllUsers", {
+    params,
+    headers,
+  });
+
+export const availableDriversForScheduleRide = async (data, params, headers) =>
+  http.post("/api/v1/subAdmin/request/availableDriversForScheduleRide", data, {
+    params,
+    headers,
+  });
+
+export const driverAllocateToUserRequest = async (data, params, headers) =>
+  http.post("/api/v1/subAdmin/request/driverAllocateToUserRequest", data, {
+    params,
+    headers,
+  });

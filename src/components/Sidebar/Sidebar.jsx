@@ -29,10 +29,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <div className="border-b border-gray-600"></div>
 
             {/* Create PreBooking Menu Item */}
-            <div className="w-full">
+            {/* <div className="w-full">
               <SidebarMenuItem
                 to="/create"
-                text="Create PreBooking"
+                text="Create PreBooking old"
+                icon={<MdCreateNewFolder className="w-5 h-5 text-white" />}
+                onClick={handleSidebarToggle}
+                className="flex items-center space-x-3 py-2 px-4 rounded-lg text-white hover:bg-[#1c2529] transition-all duration-200"
+              />
+            </div>
+
+            <div className="border-b border-gray-600"></div> */}
+
+            <div className="w-full">
+              <SidebarMenuItem
+                to="/createBooking"
+                text="Create Booking"
                 icon={<MdCreateNewFolder className="w-5 h-5 text-white" />}
                 onClick={handleSidebarToggle}
                 className="flex items-center space-x-3 py-2 px-4 rounded-lg text-white hover:bg-[#1c2529] transition-all duration-200"
