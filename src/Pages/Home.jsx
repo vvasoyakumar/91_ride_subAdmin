@@ -19,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-full h-[calc(100vh-96px)] p-8 overflow-auto bg-gray-50">
+    <div className="w-full h-[calc(100vh-65px)] p-8 overflow-auto bg-gray-50">
       <div className="mt-8">
         <h2 className="text-3xl font-semibold mb-6 text-gray-800 border-b-2 pb-3">
           Pre-Bookings

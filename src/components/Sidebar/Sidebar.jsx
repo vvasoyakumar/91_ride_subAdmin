@@ -14,7 +14,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     <div className="w-full h-full p-4 bg-[#232d33]">
       <nav className="h-full flex flex-col justify-between">
         <div className="w-full">
-          <ul className="flex flex-col gap-y-4 w-full">
+          <ul className="flex flex-col gap-y-5 w-full">
             {/* Dashboard Menu Item */}
             <div className="w-full">
               <SidebarMenuItem

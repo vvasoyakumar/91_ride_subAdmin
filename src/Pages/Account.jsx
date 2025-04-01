@@ -25,7 +25,7 @@ const Account = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-96px)] p-5">
+    <div className="w-full h-[calc(100vh-65px)] p-5">
       <div className="w-full mx-auto bg-white p-8 rounded-md">
         <h2 className="text-3xl font-semibold mb-6 text-gray-700 border-b-2 pb-3">
           Account

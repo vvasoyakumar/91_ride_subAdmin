@@ -57,6 +57,7 @@ function CreateBooking() {
     // window.location.reload();
 
     getScheduleRequestList();
+    setExistPage("userRideList");
   };
 
   const handleSubmit = async (e) => {
@@ -130,7 +131,7 @@ function CreateBooking() {
 
   return (
     <>
-      <div className="w-full h-[calc(100vh-96px)] p-5 overflow-auto">
+      <div className="w-full h-[calc(100vh-65px)] p-5 overflow-auto">
         <Button className="float-right" onClick={handleButtonClick}>
           <MdOutlineRestartAlt className="text-xl lg:text-3xl font-semibold" />
         </Button>
@@ -251,13 +252,21 @@ function CreateBooking() {
                 key={i}
               >
                 <div className="flex flex-col items-center">
+                  {/* {data.vehicleId.vehicleImage ? ( */}
                   <img
-                    // src={`${config.apiUrl}/${data.vehicleId.document}`}
                     src={`${config.apiUrl}/${data.vehicleId.vehicleImage}`}
                     // src="/img/MgEv.png"
                     alt="img"
                     className="w-28 h-20 rounded-md shadow-sm"
                   />
+                  {/* ) : (
+                    <img
+                      src={`${config.apiUrl}/${data.vehicleId.document}`}
+                      // src="/img/MgEv.png"
+                      alt="img"
+                      className="w-28 h-20 rounded-md shadow-sm"
+                    />
+                  )} */}
                   <div className="font-semibold text-center mt-3 text-sm text-gray-700">
                     {data?.vehicleId?.engineType.toUpperCase()}
                   </div>

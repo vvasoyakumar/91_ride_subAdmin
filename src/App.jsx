@@ -103,7 +103,7 @@ function Layout({ children }) {
             sidebarOpen ? "xs:block absolute" : "md:block"
           }`}
         >
-          <div className="pt-24 h-screen w-60">
+          <div className="pt-16 h-screen w-60">
             <Sidebar
               sidebarOpen={sidebarOpen}
               setSidebarOpen={setSidebarOpen}
@@ -116,7 +116,7 @@ function Layout({ children }) {
             sidebarOpen ? "xs:blur-md sm:blur-md" : ""
           }`}
         >
-          <div className="pt-24">{children}</div>
+          <div className="pt-16">{children}</div>
         </div>
       </div>
     </div>

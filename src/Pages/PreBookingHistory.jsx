@@ -202,7 +202,7 @@ const PreBookingHistory = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-96px)] p-5">
+    <div className="w-full h-[calc(100vh-65px)] p-5">
       <div className="flex my-5 justify-end">
         {/* <Button>+ Create Bookig</Button> */}
       </div>

@@ -10,14 +10,14 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
   const { logoutSubAdmin, subAdminData } = useAuthContext();
 
   return (
-    <div className="w-full absolute top-0 border-b z-50 bg-white h-24 ">
-      <div className="w-full flex items-center justify-between py-4 px-4">
-        <div className="ml-5 hidden md:block">
+    <div className="w-full absolute top-0 border-b z-50 bg-white h-16 ">
+      <div className="w-full flex items-center justify-between py-3 px-4">
+        <div className="ml-8 lg:ml-10 hidden md:block">
           <Link to={"/"}>
             <img
-              // src={`${config.apiUrl}/public/img/fevicon.png`}
-              src="/img/logo-1.png"
-              className="cursor-pointer object-contain bg-white rounded-full h-16 w-16 "
+              // src={`${config.apiUrl}/public/img/logo-1.png`}
+              src={`${config.apiUrl}/public/img/ride91-logo-2.png`}
+              className="cursor-pointer bg-white h-8 w-28"
               alt="logo"
             />
           </Link>
@@ -45,11 +45,11 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
             )}
           </div> */}
 
-          <img
-            src="/img/profile-1.png"
+          {/* <img
+            src={`${config.apiUrl}/public/img/profile-1.png`}
             alt="profile"
             className="rounded-full w-16 h-16 object-contain bg-white"
-          />
+          /> */}
 
           <div className="md:flex flex-col hidden ">
             <p className="text-[16px] font-semibold">

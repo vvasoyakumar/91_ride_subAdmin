@@ -465,7 +465,7 @@ const PreBookingCreate = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-96px)] p-5 overflow-auto">
+    <div className="w-full h-[calc(100vh-65px)] p-5 overflow-auto">
       <Button className="float-right" onClick={handleButtonClick}>
         <MdOutlineRestartAlt className="text-xl lg:text-3xl font-semibold" />
       </Button>
